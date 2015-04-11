@@ -1,0 +1,96 @@
+body {
+  -webkit-font-smoothing: antialiased;
+}
+
+.header {
+  height: 140px;
+  background-color: #00a0e9;
+}
+.header .logo {
+  float: left;
+  margin-left: 40px;
+}
+.header .logo a {
+  color: #fff;
+  font-size: 75px;
+}
+.header .nav {
+  float: right;
+  margin-right: 40px;
+  margin-top: 80px;
+}
+.header .nav li {
+  float: left;
+  margin-left: 50px;
+}
+.header .nav a {
+  color: #fff;
+  font-size: 18px;
+}
+
+.index-main {
+  background-color: #eee;
+  height: 370px;
+  position: relative;
+}
+.index-main .wrap {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.index-main .logo {
+  font-size: 50px;
+}
+.index-main .text {
+  font-size: 24px;
+  margin-bottom: 30px;
+}
+.index-main .getstart {
+  display: inline-block;
+  border-radius: 5px;
+  background-color: #00a0e9;
+  color: #fff;
+  font-size: 24px;
+  height: 50px;
+  line-height: 50px;
+  width: 240px;
+}
+
+.index-plugins {
+  padding: 40px;
+}
+.index-plugins .hd {
+  margin-bottom: 10px;
+}
+.index-plugins .plugin-list{
+  /*display: -webkit-box;
+  -webkit-box-pack: justify;*/
+  margin-left: -2.564102564102564%;
+}
+.index-plugins .plugin-list li {
+  float: left;
+  margin-bottom: 40px;
+  margin-left: 2.564102564102564%;
+  width: 31.623931623931625%;
+}
+.index-plugins .plugin-list a {
+  display: block;
+  background-color: #fcfcfc;
+  border: 1px solid #eee;
+  border-radius: 5px;
+  padding: 20px;
+}
+.index-plugins .plugin-list a:hover {
+  border-color: #00a0e9;
+  background-color: #f4fbfe;
+}
+.index-plugins .plugin-list .name {
+  display: block;
+  font-size: 24px;
+  color: #666;
+}
+.index-plugins .plugin-list .text {
+  color: #999;
+}

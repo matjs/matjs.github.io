@@ -8,9 +8,6 @@ define(
     return Magix.View.extend({
       init: function() {
         var me = this;
-        me.observeLocation({
-          path: true
-        });
       },
       render: function() {
         var me = this;

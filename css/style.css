@@ -65,15 +65,13 @@ body {
   margin-bottom: 10px;
 }
 .index-plugins .plugin-list{
-  /*display: -webkit-box;
-  -webkit-box-pack: justify;*/
   margin-left: -2.564102564102564%;
 }
 .index-plugins .plugin-list li {
   float: left;
   margin-bottom: 40px;
   margin-left: 2.564102564102564%;
-  width: 31.623931623931625%;
+  width: 30.7692307692%;
 }
 .index-plugins .plugin-list a {
   display: block;
@@ -93,4 +91,13 @@ body {
 }
 .index-plugins .plugin-list .text {
   color: #999;
+}
+.index-plugins .more a {
+  color: #333;
+  display: block;
+  border: 1px solid #eee;
+  border-radius: 5px;
+  text-align: center;
+  height: 40px;
+  line-height: 40px;
 }

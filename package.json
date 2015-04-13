@@ -2,6 +2,7 @@
   "name": "matjs website",
   "version": "0.0.1",
   "devDependencies": {
-    
+    "mat": "0.0.1",
+    "mat-opoa": "0.0.1"
   }
 }

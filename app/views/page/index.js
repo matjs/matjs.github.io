@@ -7,11 +7,11 @@ define(
   ], function ($, _, Magix) {
     return Magix.View.extend({
       init: function() {
-        var me = this;
+        var me = this
       },
       render: function() {
-        var me = this;
-        me.setViewHTML();
+        var me = this
+        me.setViewHTML()
       }
-    });
-});
+    })
+})

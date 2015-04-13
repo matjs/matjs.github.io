@@ -8,51 +8,51 @@ define(
   ], function ($, Handlebars, Magix, Loader) {
   return Magix.View.mixin({
     request: function() {
-      return Manager.createRequest(this);
+      return Manager.createRequest(this)
     },
     setViewHTML: function(data) {
-      var me = this;
-      var defer = $.Deferred();
-      var promise = defer.promise();
-      var $wrapper = $('#' + me.id);
-      var sign = me.sign;
+      var me = this
+      var defer = $.Deferred()
+      var promise = defer.promise()
+      var $wrapper = $('#' + me.id)
+      var sign = me.sign
 
-      data = data || me.data;
+      data = data || me.data
       if (!me.__tmplFn__) {
-        me.__tmplFn__ = Handlebars.compile(me.tmpl);
+        me.__tmplFn__ = Handlebars.compile(me.tmpl)
       }
 
-      Loader.destroy($wrapper[0]);
+      Loader.destroy($wrapper[0])
 
-      me.setHTML(me.id, me.__tmplFn__(data));
+      me.setHTML(me.id, me.__tmplFn__(data))
 
       Loader.boot($wrapper[0], function() {
         if (sign == me.sign) {
-          defer.resolve(Loader);
+          defer.resolve(Loader)
         }
-      });
+      })
 
-      return promise;
+      return promise
     },
     /**
      * 注册模板帮助方法
      * @param {object} data 包含方法的对象
      **/
     registerRenderers: function(data) {
-      data = data || {};
-      var me = this;
-      var ret = {};
+      data = data || {}
+      var me = this
+      var ret = {}
       for (var group in data) {
-        var groups = data[group];
+        var groups = data[group]
         for (var n in groups) {
           ret[group + '_' + n] = (function(f) {
             return function() {
-              return f.call(this, me);
-            };
-          }(groups[n]));
+              return f.call(this, me)
+            }
+          }(groups[n]))
         }
       }
-      return $.extend(me.data, ret);
+      return $.extend(me.data, ret)
     }
-  });
-});
+  })
+})

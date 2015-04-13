@@ -1,5 +1,5 @@
 define('app/ini', ['jquery'], function($) {
-  var MainView = 'app/views/layout/default';
+  var MainView = 'app/views/layout/default'
   var T = {
     routes: {
       'app/views/layout/default': [
@@ -7,7 +7,7 @@ define('app/ini', ['jquery'], function($) {
         '/page/doc'
       ]
     }
-  };
+  }
   return {
     defaultView: MainView,
     defaultPath: '/page/index',
@@ -19,17 +19,17 @@ define('app/ini', ['jquery'], function($) {
     ],
     routes: function(pathname) {
       if (!$.isEmptyObject(T.routes)) {
-        var s;
+        var s
         $.each(T.routes, function(k, item) {
           if ($.inArray(pathname, item) !== -1) {
-            s = k;
-            return false;
+            s = k
+            return false
           }
-        });
-        if (s) return s;
-        return this.unfoundView;
+        })
+        if (s) return s
+        return this.unfoundView
       }
-      return this.defaultView;
+      return this.defaultView
     },
     error: function(e) {
       if (window.JSTracker) {
@@ -39,4 +39,4 @@ define('app/ini', ['jquery'], function($) {
       }
     }
   }
-});
+})

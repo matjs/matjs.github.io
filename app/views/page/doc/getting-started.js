@@ -1,5 +1,5 @@
 define(
-  'app/views/page/404', 
+  'app/views/page/doc/getting-started', 
   [
     'magix'
   ], 

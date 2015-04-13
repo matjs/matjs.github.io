@@ -104,3 +104,28 @@ html,body {
   height: 40px;
   line-height: 40px;
 }
+
+.doc {
+  background-color: #eee;
+}
+.doc .main {
+  background-color: #fff;
+  margin-left: 215px;
+  min-height: 700px;
+  padding: 30px 40px;
+}
+.doc .side-nav {
+  float: left;
+  width: 215px;
+}
+.doc .side-nav ul {
+  padding: 40px;
+}
+.doc .side-nav a {
+  font-size: 18px;
+  color: #333;
+}
+.doc .doc-heading {
+  font-size: 38px;
+  color: #333;
+}

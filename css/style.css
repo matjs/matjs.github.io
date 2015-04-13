@@ -4,6 +4,9 @@ body {
 html,body {
   height: 100%;
 }
+a {
+  color: #08c;
+}
 
 .header {
   height: 140px;
@@ -11,7 +14,7 @@ html,body {
 }
 .header .logo {
   float: left;
-  margin-left: 40px;
+  /*margin-left: 40px;*/
 }
 .header .logo a {
   color: #fff;
@@ -19,7 +22,7 @@ html,body {
 }
 .header .nav {
   float: right;
-  margin-right: 40px;
+  /*margin-right: 40px;*/
   margin-top: 80px;
 }
 .header .nav li {
@@ -29,6 +32,11 @@ html,body {
 .header .nav a {
   color: #fff;
   font-size: 18px;
+}
+.header-bd,
+.content {
+  width: 1100px;
+  margin: 0 auto;
 }
 
 .index-main {
@@ -62,7 +70,7 @@ html,body {
 }
 
 .index-plugins {
-  padding: 40px;
+  padding: 40px 0;
 }
 .index-plugins .hd {
   margin-bottom: 10px;
@@ -126,6 +134,11 @@ html,body {
   color: #333;
 }
 .doc .doc-heading {
-  font-size: 38px;
+  font-size: 32px;
   color: #333;
+  margin-bottom: 20px;
+}
+.doc p {
+  color: #333;
+  margin-bottom: 10px;
 }

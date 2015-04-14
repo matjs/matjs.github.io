@@ -6,12 +6,16 @@ define(
   ],
   function($, Magix) {
   var viewMap = {
-    'getting-started': 'app/views/page/doc/getting-started'
+    'getting-started': 'app/views/page/doc/getting-started',
+    'cli-flags': 'app/views/page/doc/cli-flags'
   }
 
   return Magix.View.extend({
     init: function() {
       var me = this
+      me.observeLocation({
+        params: 'tab'
+      })
       me.on('created', function(){
         me._prettify()
       })

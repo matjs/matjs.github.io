@@ -129,6 +129,9 @@ a {
 .doc .side-nav ul {
   padding: 40px;
 }
+.doc .side-nav li {
+  margin-bottom: 20px;
+}
 .doc .side-nav a {
   font-size: 18px;
   color: #333;

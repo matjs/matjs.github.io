@@ -26,7 +26,9 @@ define(
       var params = loc.params
       var tab = params.tab || 'getting-started'
       
-      me.setViewHTML()
+      me.setViewHTML({
+        tab: tab
+      })
       me._mountSubView(tab)
     },
     _mountSubView: function (tab) {

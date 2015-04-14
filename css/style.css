@@ -127,12 +127,21 @@ a {
   width: 215px;
 }
 .doc .side-nav ul {
-  padding: 40px;
+  padding: 40px 0;
 }
 .doc .side-nav li {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 .doc .side-nav a {
   font-size: 18px;
   color: #333;
+  display: block;
+  height: 40px;
+  line-height: 40px;
+  padding-left: 40px;
+}
+.doc .side-nav .selected a {
+  background-color: #f3f3f3;
+  border-left: 5px solid #00a0e9;
+  padding-left: 35px; 
 }

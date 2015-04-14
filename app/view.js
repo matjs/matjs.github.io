@@ -6,6 +6,11 @@ define(
     'magix',
     'brix/loader'
   ], function ($, Handlebars, Magix, Loader) {
+  // 扩展Handlebars实现if等于判断
+  Handlebars.registerHelper('ifCond', function(v1, v2, options) {
+    return (v1 === v2) ? options.fn(this) : options.inverse(this)
+  })
+
   return Magix.View.mixin({
     request: function() {
       return Manager.createRequest(this)

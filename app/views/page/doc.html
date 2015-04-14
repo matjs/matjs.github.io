@@ -1,8 +1,8 @@
 <div class="doc">
   <div class="side-nav">
     <ul>
-      <li><a href="#!/page/doc?tab=getting-started">快速开始</a></li>
-      <li><a href="#!/page/doc?tab=cli-flags">命令行参数</a></li>
+      <li {{#ifCond tab 'getting-started'}}class="selected"{{/ifCond}}><a href="#!/page/doc?tab=getting-started">快速开始</a></li>
+      <li {{#ifCond tab 'cli-flags'}}class="selected"{{/ifCond}}><a href="#!/page/doc?tab=cli-flags">命令行参数</a></li>
     </ul>
   </div>
   <div mx-vframe="true" id="magix_vf_doc" class="main markdown-body"></div>

@@ -1,14 +1,21 @@
 define(
   'app/views/page/doc', 
   [
+    'jquery',
     'magix'
   ],
-  function(Magix) {
+  function($, Magix) {
   var viewMap = {
     'getting-started': 'app/views/page/doc/getting-started'
   }
 
   return Magix.View.extend({
+    init: function() {
+      var me = this
+      me.on('created', function(){
+        me._prettify()
+      })
+    },
     render: function() {
       var me = this
       var loc = me.location
@@ -24,6 +31,10 @@ define(
       var vframe = vom.get('magix_vf_doc')
       var viewPath = viewMap[tab]
       vframe.mountView(viewPath)
+    },
+    _prettify: function () {
+      $('pre').addClass('prettyprint')
+      prettyPrint()
     }
   })
 })

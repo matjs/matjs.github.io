@@ -35,7 +35,7 @@ $ npm install mat -g
   运行<code>npm install</code>命令安装mat到你的项目中。
 </p>
 <h3>
-  创建<code>matfile.js</code>
+  创建matfile.js
 </h3>
 <p>
   在项目根目录创建<code>matfile.js</code>文件，一个简单的<code>matfile.js</code>例子：
@@ -61,3 +61,39 @@ mat.task('default', function () {
 <pre>
 $ mat
 </pre>
+<p>
+  mat默认会使用<code>8989</code>端口启动node服务，访问<a href="http://127.0.0.1:8989" target="_blank">http://127.0.0.1:8989</a>查看效果
+</p>
+<h3>
+  配置Proxy SwitchyOmega
+</h3>
+<p>
+  很多时候我们在本地开发时会用域名来访问页面，比如我们项目线上域名为www.abc.com，那么本地一般用www.abc.net来访问，这时候就需要将域名转发到http://127.0.0.1:8989，我们知道host是不能绑定端口的，这时候需要用到代理设置，这里介绍一款chrome插件<a href="https://chrome.google.com/webstore/detail/proxy-switchyomega/padekgcemlokbadohgkifijomclgjgif" target="_blank">Proxy SwitchyOmega</a>来配置代理。
+</p>
+<h4>
+  1、设置默认情景模式
+</h4>
+<p>
+  将所有http请求都代理到http://127.0.0.1:8989
+</p>
+<p>
+  <img src="assets/img/proxy01.png">
+</p>
+<h4>
+  2、设置切换规则
+</h4>
+<p>
+  设置需要应用代理访问的域名，可以配置多个。配置切换规则的好处是只有配置的域名才会走代理请求，其他的域名访问不会受到代理的影响。
+</p>
+<p>
+  <img src="assets/img/proxy02.png">
+</p>
+<h4>
+  3、应用规则
+</h4>
+<p>
+  在chrome中打开www.abc.net，然后切换代理规则到auto switch，这样www.abc.net域名相关的请求都会被转发到http://127.0.0.1:8989，然后通过mat来处理。
+</p>
+<p>
+  <img src="assets/img/proxy03.png" width="184">
+</p>

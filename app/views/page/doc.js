@@ -6,9 +6,11 @@ define(
   ],
   function($, Magix) {
   var viewMap = {
-    'getting-started': 'app/views/page/doc/getting-started',
-    'cli-flags': 'app/views/page/doc/cli-flags',
-    'api': 'app/views/page/doc/api',
+    'getting-started'  : 'app/views/page/doc/getting-started',
+    'cli-flags'        : 'app/views/page/doc/cli-flags',
+    'api'              : 'app/views/page/doc/api',
+    'sample-matfile'   : 'app/views/page/doc/sample-matfile',
+    'writing-a-plugin' : 'app/views/page/doc/writing-a-plugin'
   }
 
   return Magix.View.extend({

@@ -1,0 +1,59 @@
+<h2>
+  matfile例子
+</h2>
+<p>
+  在快速开始章节已经给出过一个matfile例子，我们就拿那个例子做解释：
+</p>
+<pre>
+var mat  = require('mat');
+var rap  = require('mat-rap');
+var opoa = require('mat-opoa');
+
+mat.task('default', function () {
+  mat.use(rap({
+    projectId: "123"
+  }))
+
+  mat.use(opoa({
+    root: './'
+  }))
+})
+
+mat.task('daily', function () {
+  mat.use(opoa({
+    root: './',
+    proxy: 'www.abc.net'
+  }))
+})
+</pre>
+
+<h3>
+  task
+</h3>
+<p>
+  如果你用过<a href="http://gulpjs.com/" target="_blank">glupjs</a>，你一定对这种写法不陌生。mat的<code>task</code>和gulp的<code>task</code>是同一个概念，<code>task</code>用来定义不同的任务，mat具有执行任务的能力，默认情况下mat会使用default这个任务。
+</p>
+<p>
+  上面的例子中定义了两个不同的任务，代表了两种不同的应用场景：
+</p>
+<ul>
+  <li>
+    <code>default</code>任务会使用mock数据
+  </li>
+  <li>
+    <code>daily</code>任务会使用反向代理取测试服务器数据
+  </li>
+</ul>
+<p>
+  在项目的不同阶段跑不同的任务，快速切换。
+</p>
+
+<h3>
+  use
+</h3>
+<p>
+  加载mat插件
+</p>
+<p>
+  mat插件会按照加载的顺序执行，不同任务间的插件相互独立。
+</p>

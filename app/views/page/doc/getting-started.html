@@ -54,6 +54,13 @@ mat.task('default', function () {
     root: './'
   }))
 })
+
+mat.task('daily', function () {
+  mat.use(opoa({
+    root: './',
+    proxy: 'www.abc.net'
+  }))
+})
 </pre>
 <h3>
   运行mat

@@ -7,7 +7,8 @@ define(
   function($, Magix) {
   var viewMap = {
     'getting-started': 'app/views/page/doc/getting-started',
-    'cli-flags': 'app/views/page/doc/cli-flags'
+    'cli-flags': 'app/views/page/doc/cli-flags',
+    'api': 'app/views/page/doc/api',
   }
 
   return Magix.View.extend({

@@ -1,0 +1,74 @@
+<h2>
+  API文档
+</h2>
+<h3>
+  mat.env(env)
+</h3>
+<p>
+  设置mat运行时的参数
+</p>
+<pre>
+mat.env({
+  port: 8080
+})
+</pre>
+<h4>
+  port
+</h4>
+<p>
+  type: <code>Number</code>
+</p>
+<p>
+  启动node服务运行的端口
+</p>
+
+<h3>
+  mat.use(fn)
+</h3>
+<p>
+  加载mat插件
+</p>
+<pre>
+mat.use(opoa({
+  root: './'
+}))
+</pre>
+<h4>
+  fn
+</h4>
+<p>
+  type: <code>Generator Function</code>
+</p>
+
+<h3>
+  mat.task(name[, deps], fn)
+</h3>
+<p>
+  定义任务
+</p>
+<pre>
+mat.task('name', ['deps'], function() {
+  //...
+});
+</pre>
+<h4>
+  name
+</h4>
+<p>
+  任务名称
+</p>
+<h4>
+  deps
+</h4>
+<p>
+  type: <code>Array</code>
+</p>
+<p>
+  当前任务依赖的任务，依赖任务会在当前任务被执行前执行
+</p>
+<h4>
+  fn
+</h4>
+<p>
+  type: <code>Function</code>
+</p>

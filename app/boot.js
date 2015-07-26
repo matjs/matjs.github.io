@@ -2,7 +2,7 @@
   require.config({
     paths: {
       app: './app/',
-      magix: 'http://g.tbcdn.cn/thx/magix/2.0/requirejs-magix'
+      magix: '//g.alicdn.com/thx/magix/2.0/requirejs-magix'
     }
   })
 

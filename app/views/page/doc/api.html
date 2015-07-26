@@ -9,7 +9,13 @@
 </p>
 <pre>
 mat.env({
-  port: 8080
+  port: 8080,
+  root: './app',
+  combohandler: {
+    rules: [/www\.cdn\.com/],
+    trigger: '??',
+    separate: ','
+  }
 })
 </pre>
 <h4>
@@ -21,6 +27,81 @@ mat.env({
 <p>
   启动node服务运行的端口
 </p>
+<h4>
+  root
+</h4>
+<p>
+  type: <code>String</code>
+</p>
+<p>
+  本地静态资源的根目录，默认为`./`
+</p>
+<h4>
+  combohandler
+</h4>
+<p>
+  type: <code>Boolean|Object</code>
+</p>
+<p>
+  
+</p>
+
+<h3>
+  mat.url(rules)
+</h3>
+<p>
+  过滤不同的请求url，只有符合过滤规则的请求url才会被当前规则下面的插件执行到
+</p>
+<h4>
+  rules
+</h4>
+<p>
+  type: <code>Array</code>
+</p>
+<p>
+  请求url过滤条件，支持正则表达式和函数
+</p>
+
+<pre>
+
+mat.url([/\.json/])
+  .use(proxy({
+    proxyPass: 'your.proxy.host'
+  }))
+
+mat.url([/\.css/])
+  .rewrite([
+    [/\.css/g, '.less']
+  ])
+  .use(less())
+
+</pre>
+<p>
+  上面的例子中所有的.json结尾的请求url会被反向代理插件处理，但是不会被less插件处理，同理所有的.css结尾的请求url会被less插件处理，但是不会被反向代理插件处理
+</p>
+
+<h3>
+  mat.rewrite(rules)
+</h3>
+<p>
+  对请求url进行重写
+</p>
+<pre>
+mat.url([/\.css/])
+  .rewrite([
+    [/\.css/g, '.less']
+  ])
+  .use(less())
+</pre>
+<h4>
+  rules
+</h4>
+<p>
+  type: <code>Array</code>
+</p>
+<p>
+  请求url匹配条件和重写字符串
+</p>
 
 <h3>
   mat.use(fn)
@@ -29,9 +110,11 @@ mat.env({
   加载mat插件
 </p>
 <pre>
-mat.use(opoa({
-  root: './'
-}))
+mat.url([/\.css/])
+  .rewrite([
+    [/\.css/g, '.less']
+  ])
+  .use(less())
 </pre>
 <h4>
   fn

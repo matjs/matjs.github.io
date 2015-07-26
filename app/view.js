@@ -8,7 +8,7 @@ define(
   ], function ($, Handlebars, Magix, Loader) {
   // 扩展Handlebars实现if等于判断
   Handlebars.registerHelper('ifCond', function(v1, v2, options) {
-    return (v1 === v2) ? options.fn(this) : options.inverse(this)
+    return (v1.valueOf() === v2) ? options.fn(this) : options.inverse(this)
   })
 
   return Magix.View.mixin({
@@ -26,8 +26,11 @@ define(
       if (!me.__tmplFn__) {
         me.__tmplFn__ = Handlebars.compile(me.tmpl)
       }
-
       Loader.destroy($wrapper[0])
+      //加上renderer处理
+      if (me.renderers) {
+        me.registerRenderers(me.renderers)
+      }
 
       me.setHTML(me.id, me.__tmplFn__(data))
 
@@ -37,7 +40,7 @@ define(
         }
       })
 
-      return promise
+        return promise
     },
     /**
      * 注册模板帮助方法

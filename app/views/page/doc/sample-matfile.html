@@ -5,25 +5,34 @@
   在快速开始章节已经给出过一个matfile例子，我们就拿那个例子做解释：
 </p>
 <pre>
-var mat  = require('mat');
-var rap  = require('mat-rap');
-var opoa = require('mat-opoa');
+var mat   = require('mat')
+var rap   = require('mat-rap')
+var proxy = require('mat-proxy')
+var less  = require('mat-less')
 
-mat.task('default', function () {
-  mat.use(rap({
-    projectId: "123"
-  }))
-
-  mat.use(opoa({
-    root: './'
-  }))
+// 预编译less
+mat.task('less', function () {
+  mat.url([/main\.css/])
+    .rewrite([
+      [/\.css/g, '.less']
+    ])
+    .use(less())
 })
 
-mat.task('daily', function () {
-  mat.use(opoa({
-    root: './',
-    proxy: 'www.abc.net'
-  }))
+// 请求rap数据
+mat.task('default', ['less'], function () {
+  mat.url([/\.json/])
+    .use(rap({
+      projectId: 'your rap project id'
+    }))
+})
+
+// 反向代理
+mat.task('daily', ['less'], function () {
+  mat.url([/\.json/])
+    .use(proxy({
+      proxyPass: 'your.proxy.host'
+    }))
 })
 </pre>
 

@@ -43,18 +43,21 @@ mat.task('daily', ['less'], function () {
   如果你用过<a href="http://gulpjs.com/" target="_blank">gulpjs</a>，你一定对这种写法不陌生。mat的<code>task</code>和gulp的<code>task</code>是同一个概念，<code>task</code>用来定义不同的任务，mat具有执行任务的能力，默认情况下mat会使用default这个任务。
 </p>
 <p>
-  上面的例子中定义了两个不同的任务，代表了两种不同的应用场景：
+  上面的例子中定义了三个不同的任务：
 </p>
 <ul>
   <li>
-    <code>default</code>任务会使用mock数据
+    <code>less</code>任务用来预编译less
   </li>
   <li>
-    <code>daily</code>任务会使用反向代理取测试服务器数据
+    <code>default</code>任务用来请求mock数据
+  </li>
+  <li>
+    <code>daily</code>任务用来反向代理取测试服务器数据
   </li>
 </ul>
 <p>
-  在项目的不同阶段跑不同的任务，快速切换。
+  其中<code>less</code>任务是<code>default</code>和<code>daily</code>任务的从属任务，它将在你的任务执行前执行并执行完毕
 </p>
 
 <h3>
